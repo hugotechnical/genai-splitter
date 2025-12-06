@@ -1,0 +1,17 @@
+services:        
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: genai-splitter
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8089 --workers 1
+
+    ports:
+      - "8089:8089"
+    env_file:
+      - .env
+    
+    volumes:
+      - ./app:/app/app
+    
+    restart: unless-stopped

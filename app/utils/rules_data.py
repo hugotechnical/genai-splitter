@@ -1,4 +1,6 @@
-SAMPLE_RULES = [
+from app.schemas.enums import ProfileType
+
+RULES_PHE_DUYET = [
     # --- NHÓM: Hồ sơ pháp lý ---
     ("CAN CUOC", "Hồ sơ pháp lý", "Căn cước công dân/CMND", ["SAO Y"], ["Thông tin Căn cước công dân"]),
     ("DANG KY KINH DOANH", "Hồ sơ pháp lý", "Giấy chứng nhận Đăng ký kinh doanh"),
@@ -170,3 +172,83 @@ NHA_DU_AN_RULES = [
     ("GIAY YEU CAU BAO HIEM", "Hồ sơ bảo hiểm", "Giấy yêu cầu bảo hiểm"),
     
 ]
+
+RULES_GIAI_NGAN = [
+            # --- NHÓM: HỒ SƠ TÍN DỤNG ---
+            ("HOP DONG CHO VAY", "Hồ sơ tín dụng", "Hợp đồng cho vay"),
+            ("PHU LUC HOP DONG", "Hồ sơ tín dụng", "Phụ lục hợp đồng cho vay"),
+            ("HOP DONG SUA DOI BO SUNG", "Hồ sơ tín dụng", "Phụ lục hợp đồng cho vay"),
+            ("THONG BAO CAP TIN DUNG", "Hồ sơ tín dụng", "Thông báo cấp tín dụng"),
+            ("HOP DONG BAO LANH", "Hồ sơ tín dụng", "Hợp đồng bảo lãnh"),
+            ("THOA THUAN KHUNG VE CAP TIN DUNG", "Hồ sơ tín dụng", "Thỏa thuận khung+PL về cấp BL+PL cho vay..."),
+            ("PHU LUC CAC THOA THUAN CU THE", "Hồ sơ tín dụng", "Thỏa thuận khung+PL về cấp BL+PL cho vay..."),
+            ("PHU LUC THOA THUAN CU THE", "Hồ sơ tín dụng", "Thỏa thuận khung+PL về cấp BL+PL cho vay..."),
+            ("GIAY CAM KET", "Hồ sơ tín dụng", "Giấy cam kết"),
+            ("THOA THUAN SU DUNG HE THONG TU DONG", "Hồ sơ tín dụng", "Thỏa thuận sử dụng hệ thống"),
+            ("VAN BAN XAC NHAN", "Hồ sơ tín dụng", "Văn bản xác nhận dữ liệu"),
+
+            # --- NHÓM: HỒ SƠ BẢO HIỂM ---
+
+            ("VAN BAN CHUNG NHAN", "Hồ sơ khác", "VĂN BẢN CHỨNG NHẬN"), # Lưu ý: Key này khá chung chung
+            ("GIAY CHUNG NHAN", "Hồ sơ bảo hiểm", "GIẤY CHỨNG NHẬN BẢO HIỂM", ["GROUPING"]), # Lưu ý: Key này khá chung chung
+            ("GIAY CHUNG NHAN BAO HIEM", "Hồ sơ bảo hiểm", "Hợp đồng bảo hiểm"),
+            ("GIAY XAC NHAN CHUYEN QUYEN THU HUONG BAO HIEM", "Hồ sơ bảo hiểm", "Chuyển quyền thụ hưởng bảo hiểm"),
+            ("HOA DON GIA TRI GIA TANG", "Hồ sơ bảo hiểm", "Hóa đơn bảo hiểm"), # Cần logic check thêm chữ "BẢO HIỂM" trong nội dung
+            ("PHIEU THU", "Hồ sơ bảo hiểm", "Phiếu thu"), # Cần logic check thêm chữ "NỘP PHÍ BẢO HIỂM"
+            ("DE NGHI TAI TUC HOP DONG BAO HIEM", "Hồ sơ bảo hiểm", "Đề nghị tái tục hợp đồng bảo hiểm"),
+            ("APP@VPB.COM.VN", "Hồ sơ bảo hiểm", "Mail bảo hiểm"),
+            ("GIAY YEU CAU BAO HIEM", "Hồ sơ bảo hiểm", "Giấy yêu cầu bảo hiểm"),
+
+            # --- NHÓM: HỒ SƠ TÀI SẢN ---
+            ("GIAY CHUNG NHAN", "Hồ sơ tài sản", "Giấy chứng nhận BĐS"), # Trùng key với BH, cần xử lý ưu tiên hoặc ngữ cảnh
+            ("BAO CAO DINH GIA TAI SAN", "Hồ sơ tài sản", "Báo cáo định giá tài sản"),
+            ("HOP DONG THE CHAP", "Hồ sơ tài sản", "Hợp đồng thế chấp"),
+            ("HOP DONG CAM CO", "Hồ sơ tài sản", "Hợp đồng thế chấp"),
+            ("HOP DONG BAO DAM", "Hồ sơ tài sản", "Hợp đồng thế chấp"),
+            # ("PHIEU YEU CAU DANG KY BIEN PHAP BAO DAM", "Hồ sơ tài sản", "Đăng ký GDBĐ"),
+            ("PHIEU YEU CAU DANG KY", "Hồ sơ tài sản", "Đăng ký GDBĐ"),
+            ("DON DANG KY THE CHAP", "Hồ sơ tài sản", "Đăng ký GDBĐ"),
+            ("BIEN BAN DINH GIA TAI SAN", "Hồ sơ tài sản", "Biên bản định giá tài sản"),
+            ("GIAY BIEN NHAN HO SO TAI SAN BAO DAM", "Hồ sơ tài sản", "Giấy biên nhận hồ sơ tài sản bảo đảm"),
+            ("PHIEU NHAP KHO TAI SAN BAO DAM", "Hồ sơ tài sản", "Nhập kho"),
+            ("CHUNG NHAN DANG KY XE O TO", "Hồ sơ tài sản", "Đăng ký xe"),
+            # ("GIAY HEN", "Hồ sơ tài sản", "Giấy hẹn"),
+            ("GIAY CHUNG NHAN KIEM DINH", "Hồ sơ tài sản", "Đăng kiểm"),
+            ("CAM KET BAN GIAO GIAY TO XE", "Hồ sơ tài sản", "Cam kết bàn giao giấy tờ xe"),
+            ("HOP DONG TIEN GUI CO KY HAN", "Hồ sơ tài sản", "Hợp đồng tiền gửi"),
+            ("GIAY DE NGHI PHONG TOA SO DU TIEN GUI", "Hồ sơ tài sản", "Đề nghị phong tỏa"),
+            ("DE NGHI XAC NHAN VA QUAN LY TAI SAN BAO DAM", "Hồ sơ tài sản", "ĐN xác nhận và quản lý tài sản bảo đảm"),
+            ("GIAY BIEN NHAN TAI SAN", "Hồ sơ tài sản", "Giấy biên nhận tài sản"),
+            ("HOP DONG CAM CO", "Hồ sơ tài sản", "Hợp đồng cầm cố"), # Key này xuất hiện lần 2 cho loại hồ sơ riêng biệt
+
+            # --- NHÓM: HỒ SƠ GIẢI NGÂN/PHÁT HÀNH BẢO LÃNH ---
+            ("TO TRINH", "Hồ sơ giải ngân/phát hành bảo lãnh", "Tờ trình"),
+            ("KHE UOC", "Hồ sơ giải ngân/phát hành bảo lãnh", "KUNN"),
+            ("DE NGHI PHAT HANH BAO LANH", "Hồ sơ giải ngân/phát hành bảo lãnh", "Đề nghị phát hành bảo lãnh"),
+
+            # --- NHÓM: HỒ SƠ CHỨNG MINH MỤC ĐÍCH ---
+            ("HOP DONG MUA BAN", "Hồ sơ chứng minh mục đích", "Hợp đồng"),
+            ("HOP DONG KINH TE", "Hồ sơ chứng minh mục đích", "Hợp đồng"),
+            ("DON DAT HANG", "Hồ sơ chứng minh mục đích", "Hợp đồng"),
+            ("HOA DON", "Hồ sơ chứng minh mục đích", "Hóa đơn"), # Cẩn thận nhầm với hóa đơn bảo hiểm
+            ("CONG NO", "Hồ sơ chứng minh mục đích", "Đối chiếu công nợ"),
+            ("DE NGHI THANH TOAN", "Hồ sơ chứng minh mục đích", "Đề nghị thanh toán"),
+            ("THONG BAO", "HỒ SƠ KHÁC", "Thông báo"),
+            ("GIAY DE NGHI", "HỒ SƠ KHÁC", "Giấy đề nghị"),
+            ("HOP DONG BAO HIEM", "HỒ SƠ KHÁC", "Hợp đồng bảo hiểm", ["GROUPING"]),
+            ("PHIEU PHAN LOAI RUI RO", "HỒ SƠ KHÁC", "Phiếu phân loại rủi ro"),
+            ("PHIEU KHAI BAO THONG TIN", "HỒ SƠ KHÁC", "Phiếu khai báo thông tin"),
+            ("CERTIFICATE OF CONFORMITY", "HỒ SƠ KHÁC", "Phiếu kiểm tra chất lượng xuất xưởng"),
+
+]
+
+# Map Enum tới biến data
+RULES_REGISTRY = {
+    ProfileType.HO_SO_PHE_DUYET: RULES_PHE_DUYET,
+    ProfileType.HO_SO_GIAI_NGAN: RULES_GIAI_NGAN,
+    ProfileType.NHA_DU_AN_RULES: NHA_DU_AN_RULES,
+
+}
+
+def get_rules_by_profile(profile_type: ProfileType):
+    return RULES_REGISTRY.get(profile_type, [])

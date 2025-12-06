@@ -1,3 +1,7 @@
-PyMuPDF==1.25.0
+fastapi==0.123.10
+uvicorn==0.38.0
+pymupdf==1.26.6
 thefuzz==0.22.1
-python-Levenshtein==0.23.0
+python-multipart==0.0.20
+pydantic==2.12.5
+pydantic-settings==2.12.0
