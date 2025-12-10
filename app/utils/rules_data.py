@@ -87,7 +87,7 @@ RULES_PHE_DUYET = [
     # Lưu ý: Mục "Phiếu giao dịch" (VN0010186) thường là thông tin giao dịch, có thể bổ sung nếu cần 
 ]      
 
-NHA_DU_AN_RULES = [
+RULES_NHA_DU_AN = [
     # --- HỒ SƠ TÍN DỤNG ---
     ("HOP DONG CHO VAY", "Hồ sơ tín dụng", "Hợp đồng cho vay"),
     ("PHU LUC HOP DONG CHO VAY", "Hồ sơ tín dụng", "Phụ lục HĐCV"),
@@ -174,79 +174,153 @@ NHA_DU_AN_RULES = [
 ]
 
 RULES_GIAI_NGAN = [
-            # --- NHÓM: HỒ SƠ TÍN DỤNG ---
-            ("HOP DONG CHO VAY", "Hồ sơ tín dụng", "Hợp đồng cho vay"),
-            ("PHU LUC HOP DONG", "Hồ sơ tín dụng", "Phụ lục hợp đồng cho vay"),
-            ("HOP DONG SUA DOI BO SUNG", "Hồ sơ tín dụng", "Phụ lục hợp đồng cho vay"),
-            ("THONG BAO CAP TIN DUNG", "Hồ sơ tín dụng", "Thông báo cấp tín dụng"),
-            ("HOP DONG BAO LANH", "Hồ sơ tín dụng", "Hợp đồng bảo lãnh"),
-            ("THOA THUAN KHUNG VE CAP TIN DUNG", "Hồ sơ tín dụng", "Thỏa thuận khung+PL về cấp BL+PL cho vay..."),
-            ("PHU LUC CAC THOA THUAN CU THE", "Hồ sơ tín dụng", "Thỏa thuận khung+PL về cấp BL+PL cho vay..."),
-            ("PHU LUC THOA THUAN CU THE", "Hồ sơ tín dụng", "Thỏa thuận khung+PL về cấp BL+PL cho vay..."),
-            ("GIAY CAM KET", "Hồ sơ tín dụng", "Giấy cam kết"),
-            ("THOA THUAN SU DUNG HE THONG TU DONG", "Hồ sơ tín dụng", "Thỏa thuận sử dụng hệ thống"),
-            ("VAN BAN XAC NHAN", "Hồ sơ tín dụng", "Văn bản xác nhận dữ liệu"),
+    # --- NHÓM: HỒ SƠ TÍN DỤNG ---
+    ("HOP DONG CHO VAY", "Hồ sơ tín dụng", "Hợp đồng cho vay"),
+    ("PHU LUC HOP DONG", "Hồ sơ tín dụng", "Phụ lục hợp đồng cho vay"),
+    ("HOP DONG SUA DOI BO SUNG", "Hồ sơ tín dụng", "Phụ lục hợp đồng cho vay"),
+    ("THONG BAO CAP TIN DUNG", "Hồ sơ tín dụng", "Thông báo cấp tín dụng"),
+    ("HOP DONG BAO LANH", "Hồ sơ tín dụng", "Hợp đồng bảo lãnh"),
+    ("THOA THUAN KHUNG VE CAP TIN DUNG", "Hồ sơ tín dụng", "Thỏa thuận khung+PL về cấp BL+PL cho vay..."),
+    ("PHU LUC CAC THOA THUAN CU THE", "Hồ sơ tín dụng", "Thỏa thuận khung+PL về cấp BL+PL cho vay..."),
+    ("PHU LUC THOA THUAN CU THE", "Hồ sơ tín dụng", "Thỏa thuận khung+PL về cấp BL+PL cho vay..."),
+    ("GIAY CAM KET", "Hồ sơ tín dụng", "Giấy cam kết"),
+    ("THOA THUAN SU DUNG HE THONG TU DONG", "Hồ sơ tín dụng", "Thỏa thuận sử dụng hệ thống"),
+    ("VAN BAN XAC NHAN", "Hồ sơ tín dụng", "Văn bản xác nhận dữ liệu"),
 
-            # --- NHÓM: HỒ SƠ BẢO HIỂM ---
+    # --- NHÓM: HỒ SƠ BẢO HIỂM ---
 
-            ("VAN BAN CHUNG NHAN", "Hồ sơ khác", "VĂN BẢN CHỨNG NHẬN"), # Lưu ý: Key này khá chung chung
-            ("GIAY CHUNG NHAN", "Hồ sơ bảo hiểm", "GIẤY CHỨNG NHẬN BẢO HIỂM", ["GROUPING"]), # Lưu ý: Key này khá chung chung
-            ("GIAY CHUNG NHAN BAO HIEM", "Hồ sơ bảo hiểm", "Hợp đồng bảo hiểm"),
-            ("GIAY XAC NHAN CHUYEN QUYEN THU HUONG BAO HIEM", "Hồ sơ bảo hiểm", "Chuyển quyền thụ hưởng bảo hiểm"),
-            ("HOA DON GIA TRI GIA TANG", "Hồ sơ bảo hiểm", "Hóa đơn bảo hiểm"), # Cần logic check thêm chữ "BẢO HIỂM" trong nội dung
-            ("PHIEU THU", "Hồ sơ bảo hiểm", "Phiếu thu"), # Cần logic check thêm chữ "NỘP PHÍ BẢO HIỂM"
-            ("DE NGHI TAI TUC HOP DONG BAO HIEM", "Hồ sơ bảo hiểm", "Đề nghị tái tục hợp đồng bảo hiểm"),
-            ("APP@VPB.COM.VN", "Hồ sơ bảo hiểm", "Mail bảo hiểm"),
-            ("GIAY YEU CAU BAO HIEM", "Hồ sơ bảo hiểm", "Giấy yêu cầu bảo hiểm"),
+    ("VAN BAN CHUNG NHAN", "Hồ sơ khác", "VĂN BẢN CHỨNG NHẬN"), # Lưu ý: Key này khá chung chung
+    ("GIAY CHUNG NHAN", "Hồ sơ bảo hiểm", "GIẤY CHỨNG NHẬN BẢO HIỂM", ["GROUPING"]), # Lưu ý: Key này khá chung chung
+    ("GIAY CHUNG NHAN BAO HIEM", "Hồ sơ bảo hiểm", "Hợp đồng bảo hiểm"),
+    ("GIAY XAC NHAN CHUYEN QUYEN THU HUONG BAO HIEM", "Hồ sơ bảo hiểm", "Chuyển quyền thụ hưởng bảo hiểm"),
+    ("HOA DON GIA TRI GIA TANG", "Hồ sơ bảo hiểm", "Hóa đơn bảo hiểm"), # Cần logic check thêm chữ "BẢO HIỂM" trong nội dung
+    ("PHIEU THU", "Hồ sơ bảo hiểm", "Phiếu thu"), # Cần logic check thêm chữ "NỘP PHÍ BẢO HIỂM"
+    ("DE NGHI TAI TUC HOP DONG BAO HIEM", "Hồ sơ bảo hiểm", "Đề nghị tái tục hợp đồng bảo hiểm"),
+    ("APP@VPB.COM.VN", "Hồ sơ bảo hiểm", "Mail bảo hiểm"),
+    ("GIAY YEU CAU BAO HIEM", "Hồ sơ bảo hiểm", "Giấy yêu cầu bảo hiểm"),
 
-            # --- NHÓM: HỒ SƠ TÀI SẢN ---
-            ("GIAY CHUNG NHAN", "Hồ sơ tài sản", "Giấy chứng nhận BĐS"), # Trùng key với BH, cần xử lý ưu tiên hoặc ngữ cảnh
-            ("BAO CAO DINH GIA TAI SAN", "Hồ sơ tài sản", "Báo cáo định giá tài sản"),
-            ("HOP DONG THE CHAP", "Hồ sơ tài sản", "Hợp đồng thế chấp"),
-            ("HOP DONG CAM CO", "Hồ sơ tài sản", "Hợp đồng thế chấp"),
-            ("HOP DONG BAO DAM", "Hồ sơ tài sản", "Hợp đồng thế chấp"),
-            # ("PHIEU YEU CAU DANG KY BIEN PHAP BAO DAM", "Hồ sơ tài sản", "Đăng ký GDBĐ"),
-            ("PHIEU YEU CAU DANG KY", "Hồ sơ tài sản", "Đăng ký GDBĐ"),
-            ("DON DANG KY THE CHAP", "Hồ sơ tài sản", "Đăng ký GDBĐ"),
-            ("BIEN BAN DINH GIA TAI SAN", "Hồ sơ tài sản", "Biên bản định giá tài sản"),
-            ("GIAY BIEN NHAN HO SO TAI SAN BAO DAM", "Hồ sơ tài sản", "Giấy biên nhận hồ sơ tài sản bảo đảm"),
-            ("PHIEU NHAP KHO TAI SAN BAO DAM", "Hồ sơ tài sản", "Nhập kho"),
-            ("CHUNG NHAN DANG KY XE O TO", "Hồ sơ tài sản", "Đăng ký xe"),
-            # ("GIAY HEN", "Hồ sơ tài sản", "Giấy hẹn"),
-            ("GIAY CHUNG NHAN KIEM DINH", "Hồ sơ tài sản", "Đăng kiểm"),
-            ("CAM KET BAN GIAO GIAY TO XE", "Hồ sơ tài sản", "Cam kết bàn giao giấy tờ xe"),
-            ("HOP DONG TIEN GUI CO KY HAN", "Hồ sơ tài sản", "Hợp đồng tiền gửi"),
-            ("GIAY DE NGHI PHONG TOA SO DU TIEN GUI", "Hồ sơ tài sản", "Đề nghị phong tỏa"),
-            ("DE NGHI XAC NHAN VA QUAN LY TAI SAN BAO DAM", "Hồ sơ tài sản", "ĐN xác nhận và quản lý tài sản bảo đảm"),
-            ("GIAY BIEN NHAN TAI SAN", "Hồ sơ tài sản", "Giấy biên nhận tài sản"),
-            ("HOP DONG CAM CO", "Hồ sơ tài sản", "Hợp đồng cầm cố"), # Key này xuất hiện lần 2 cho loại hồ sơ riêng biệt
+    # --- NHÓM: HỒ SƠ TÀI SẢN ---
+    ("GIAY CHUNG NHAN", "Hồ sơ tài sản", "Giấy chứng nhận BĐS"), # Trùng key với BH, cần xử lý ưu tiên hoặc ngữ cảnh
+    ("BAO CAO DINH GIA TAI SAN", "Hồ sơ tài sản", "Báo cáo định giá tài sản"),
+    ("HOP DONG THE CHAP", "Hồ sơ tài sản", "Hợp đồng thế chấp"),
+    ("HOP DONG CAM CO", "Hồ sơ tài sản", "Hợp đồng thế chấp"),
+    ("HOP DONG BAO DAM", "Hồ sơ tài sản", "Hợp đồng thế chấp"),
+    # ("PHIEU YEU CAU DANG KY BIEN PHAP BAO DAM", "Hồ sơ tài sản", "Đăng ký GDBĐ"),
+    ("PHIEU YEU CAU DANG KY", "Hồ sơ tài sản", "Đăng ký GDBĐ"),
+    ("DON DANG KY THE CHAP", "Hồ sơ tài sản", "Đăng ký GDBĐ"),
+    ("BIEN BAN DINH GIA TAI SAN", "Hồ sơ tài sản", "Biên bản định giá tài sản"),
+    ("GIAY BIEN NHAN HO SO TAI SAN BAO DAM", "Hồ sơ tài sản", "Giấy biên nhận hồ sơ tài sản bảo đảm"),
+    ("PHIEU NHAP KHO TAI SAN BAO DAM", "Hồ sơ tài sản", "Nhập kho"),
+    ("CHUNG NHAN DANG KY XE O TO", "Hồ sơ tài sản", "Đăng ký xe"),
+    # ("GIAY HEN", "Hồ sơ tài sản", "Giấy hẹn"),
+    ("GIAY CHUNG NHAN KIEM DINH", "Hồ sơ tài sản", "Đăng kiểm"),
+    ("CAM KET BAN GIAO GIAY TO XE", "Hồ sơ tài sản", "Cam kết bàn giao giấy tờ xe"),
+    ("HOP DONG TIEN GUI CO KY HAN", "Hồ sơ tài sản", "Hợp đồng tiền gửi"),
+    ("GIAY DE NGHI PHONG TOA SO DU TIEN GUI", "Hồ sơ tài sản", "Đề nghị phong tỏa"),
+    ("DE NGHI XAC NHAN VA QUAN LY TAI SAN BAO DAM", "Hồ sơ tài sản", "ĐN xác nhận và quản lý tài sản bảo đảm"),
+    ("GIAY BIEN NHAN TAI SAN", "Hồ sơ tài sản", "Giấy biên nhận tài sản"),
+    ("HOP DONG CAM CO", "Hồ sơ tài sản", "Hợp đồng cầm cố"), # Key này xuất hiện lần 2 cho loại hồ sơ riêng biệt
 
-            # --- NHÓM: HỒ SƠ GIẢI NGÂN/PHÁT HÀNH BẢO LÃNH ---
-            ("TO TRINH", "Hồ sơ giải ngân/phát hành bảo lãnh", "Tờ trình"),
-            ("KHE UOC", "Hồ sơ giải ngân/phát hành bảo lãnh", "KUNN"),
-            ("DE NGHI PHAT HANH BAO LANH", "Hồ sơ giải ngân/phát hành bảo lãnh", "Đề nghị phát hành bảo lãnh"),
+    # --- NHÓM: HỒ SƠ GIẢI NGÂN/PHÁT HÀNH BẢO LÃNH ---
+    ("TO TRINH", "Hồ sơ giải ngân/phát hành bảo lãnh", "Tờ trình"),
+    ("KHE UOC", "Hồ sơ giải ngân/phát hành bảo lãnh", "KUNN"),
+    ("DE NGHI PHAT HANH BAO LANH", "Hồ sơ giải ngân/phát hành bảo lãnh", "Đề nghị phát hành bảo lãnh"),
 
-            # --- NHÓM: HỒ SƠ CHỨNG MINH MỤC ĐÍCH ---
-            ("HOP DONG MUA BAN", "Hồ sơ chứng minh mục đích", "Hợp đồng"),
-            ("HOP DONG KINH TE", "Hồ sơ chứng minh mục đích", "Hợp đồng"),
-            ("DON DAT HANG", "Hồ sơ chứng minh mục đích", "Hợp đồng"),
-            ("HOA DON", "Hồ sơ chứng minh mục đích", "Hóa đơn"), # Cẩn thận nhầm với hóa đơn bảo hiểm
-            ("CONG NO", "Hồ sơ chứng minh mục đích", "Đối chiếu công nợ"),
-            ("DE NGHI THANH TOAN", "Hồ sơ chứng minh mục đích", "Đề nghị thanh toán"),
-            ("THONG BAO", "HỒ SƠ KHÁC", "Thông báo"),
-            ("GIAY DE NGHI", "HỒ SƠ KHÁC", "Giấy đề nghị"),
-            ("HOP DONG BAO HIEM", "HỒ SƠ KHÁC", "Hợp đồng bảo hiểm", ["GROUPING"]),
-            ("PHIEU PHAN LOAI RUI RO", "HỒ SƠ KHÁC", "Phiếu phân loại rủi ro"),
-            ("PHIEU KHAI BAO THONG TIN", "HỒ SƠ KHÁC", "Phiếu khai báo thông tin"),
-            ("CERTIFICATE OF CONFORMITY", "HỒ SƠ KHÁC", "Phiếu kiểm tra chất lượng xuất xưởng"),
+    # --- NHÓM: HỒ SƠ CHỨNG MINH MỤC ĐÍCH ---
+    ("HOP DONG MUA BAN", "Hồ sơ chứng minh mục đích", "Hợp đồng"),
+    ("HOP DONG KINH TE", "Hồ sơ chứng minh mục đích", "Hợp đồng"),
+    ("DON DAT HANG", "Hồ sơ chứng minh mục đích", "Hợp đồng"),
+    ("HOA DON", "Hồ sơ chứng minh mục đích", "Hóa đơn"), # Cẩn thận nhầm với hóa đơn bảo hiểm
+    ("CONG NO", "Hồ sơ chứng minh mục đích", "Đối chiếu công nợ"),
+    ("DE NGHI THANH TOAN", "Hồ sơ chứng minh mục đích", "Đề nghị thanh toán"),
+    ("THONG BAO", "HỒ SƠ KHÁC", "Thông báo"),
+    ("GIAY DE NGHI", "HỒ SƠ KHÁC", "Giấy đề nghị"),
+    ("HOP DONG BAO HIEM", "HỒ SƠ KHÁC", "Hợp đồng bảo hiểm", ["GROUPING"]),
+    ("PHIEU PHAN LOAI RUI RO", "HỒ SƠ KHÁC", "Phiếu phân loại rủi ro"),
+    ("PHIEU KHAI BAO THONG TIN", "HỒ SƠ KHÁC", "Phiếu khai báo thông tin"),
+    ("CERTIFICATE OF CONFORMITY", "HỒ SƠ KHÁC", "Phiếu kiểm tra chất lượng xuất xưởng"),
 
+]
+
+RULES_HOP_DONG_MUA_BAN_O_TO = [
+    # 1. Danh mục hồ sơ
+    ("DANH MUC HO SO", "Danh mục hồ sơ chi tiết", "Danh mục hồ sơ"),
+
+    # 2. Hồ sơ phê duyệt
+    ("NGHI QUYET PHE DUYET", "Hồ sơ phê duyệt", "Nghị quyết phê duyệt"),
+    ("THONG BAO CAP TIN DUNG CO DIEU KIEN", "Hồ sơ phê duyệt", "Thông báo cấp tín dụng có điều kiện"),
+
+    # 3. Hồ sơ pháp lý
+    ("CCCD", "Hồ sơ pháp lý", "Căn cước công dân"),
+    ("GIAY DANG KY KET HON", "Hồ sơ pháp lý", "Đăng ký kết hôn / Trích lục kết hôn"),
+    ("GIAY XAC NHAN TINH TRANG HON NHAN", "Hồ sơ pháp lý", "Giấy xác nhận tình trạng hôn nhân"),
+    ("GIAY XAC NHAN THONG TIN CU TRU", "Hồ sơ pháp lý", "Giấy xác nhận thông tin cư trú"),
+    ("VNEID", "Hồ sơ pháp lý", "Thông tin cư trú (VNeID)"),
+    ("CAM KET CMND", "Hồ sơ pháp lý", "Cam kết CMND/CCCD"),
+    ("GIAY KHAI SINH", "Hồ sơ pháp lý", "Giấy khai sinh"),
+    ("GIAY XAC NHAN NHAN KHAU", "Hồ sơ pháp lý", "Giấy xác nhận nhân khẩu"),
+
+    # 4. Hồ sơ lịch sử quan hệ tín dụng
+    ("BAO CAO CIC", "Hồ sơ lịch sử quan hệ tín dụng", "Báo cáo CIC"),
+
+    # 5. Hồ sơ đề nghị vay vốn
+    ("GIAY DE NGHI VAY VON", "Hồ sơ đề nghị vay vốn", "Giấy đề nghị vay vốn"),
+
+    # 6. Hồ sơ mục đích
+    ("HOP DONG MUA BAN XE", "Hồ sơ mục đích vay", "Hợp đồng mua bán xe"),
+    ("HOP DONG MUA BAN CONG CHUNG", "Hồ sơ mục đích vay", "Hợp đồng mua bán công chứng"),
+    ("HOP DONG UY QUYEN", "Hồ sơ mục đích vay", "Hợp đồng ủy quyền"),
+    ("HOA DON GTGT", "Hồ sơ mục đích vay", "Hóa đơn giá trị gia tăng"),
+    ("PHIEU KIEM TRA CHAT LUONG XUAT XUONG", "Hồ sơ mục đích vay", "Phiếu kiểm tra chất lượng xuất xưởng"),
+    ("GIAY CHUNG NHAN CL ATKT VA BVMT", "Hồ sơ mục đích vay", "Giấy chứng nhận CL ATKT và BVMT"),
+    ("TO KHAI NGUON GOC XE NHAP KHAU", "Hồ sơ mục đích vay", "Tờ khai nguồn gốc xe nhập khẩu"),
+    ("THOA THUAN HO TRO TRA THAY", "Hồ sơ mục đích vay", "Thỏa thuận hỗ trợ trả thay"),
+    ("PHU LUC HOP DONG MUA BAN", "Hồ sơ mục đích vay", "Phụ lục hợp đồng mua bán"),
+
+    # 7. Hồ sơ nguồn thu/tài chính
+    ("BANG KE THU NHAP", "Hồ sơ nguồn thu/tài chính", "Bảng kê thu nhập"),
+    ("XAC NHAN HOAT DONG HO KINH DOANH", "Hồ sơ nguồn thu/tài chính", "Xác nhận hoạt động hộ kinh doanh"),
+    ("DANG KY KINH DOANH", "Hồ sơ nguồn thu/tài chính", "Đăng ký kinh doanh"),
+    ("GIAY NOP TIEN VAO NSNN", "Hồ sơ nguồn thu/tài chính", "Giấy nộp tiền vào ngân sách nhà nước"),
+    ("BAO CAO TAI CHINH", "Hồ sơ nguồn thu/tài chính", "Báo cáo tài chính"),
+    ("BANG KE TAI SAN TICH LUY", "Hồ sơ nguồn thu/tài chính", "Bảng kê tài sản tích lũy"),
+
+    # 8. Hồ sơ tài sản bảo đảm
+    ("CHUNG NHAN DANG KY XE", "Hồ sơ tài sản bảo đảm", "Chứng nhận đăng ký xe ô tô"),
+    ("GIAY HEN DANG KY XE", "Hồ sơ tài sản bảo đảm", "Giấy hẹn đăng ký xe"),
+    ("GIAY CHUNG NHAN KIEM DINH", "Hồ sơ tài sản bảo đảm", "Giấy chứng nhận kiểm định"),
+    ("BIEN BAN DINH GIA TAI SAN", "Hồ sơ tài sản bảo đảm", "Biên bản định giá tài sản"),
+    ("HOP DONG THE CHAP", "Hồ sơ tài sản bảo đảm", "Hợp đồng thế chấp"),
+    ("PHU LUC HOP DONG THE CHAP", "Hồ sơ tài sản bảo đảm", "Phụ lục hợp đồng thế chấp"),
+    ("DON DANG KY GIAO DICH BAO DAM", "Hồ sơ tài sản bảo đảm", "Đơn đăng ký GDBĐ (Phiếu yêu cầu)"),
+    ("GIAY BIEN NHAN TAI SAN", "Hồ sơ tài sản bảo đảm", "Giấy biên nhận tài sản"),
+    ("CAM KET TAI SAN RIENG CONG CHUNG", "Hồ sơ tài sản bảo đảm", "Cam kết tài sản riêng (Mẫu công chứng)"),
+    ("VAN BAN CAM KET TAI SAN RIENG", "Hồ sơ tài sản bảo đảm", "Văn bản cam kết tài sản riêng (Mẫu VPBank)"),
+    ("BAO CAO TU VAN GIA", "Hồ sơ tài sản bảo đảm", "Báo cáo tư vấn giá"),
+    ("BAO CAO DINH GIA", "Hồ sơ tài sản bảo đảm", "Báo cáo định giá"),
+
+    # 9. Hồ sơ tín dụng
+    ("HOP DONG CHO VAY", "Hồ sơ tín dụng", "Hợp đồng cho vay"),
+    ("GIAY DE NGHI GIAI NGAN", "Hồ sơ tín dụng", "Giấy đề nghị giải ngân"),
+    ("KHE UOC NHAN NO", "Hồ sơ tín dụng", "Khế ước nhận nợ"),
+    ("PHU LUC HOP DONG CHO VAY", "Hồ sơ tín dụng", "Phụ lục hợp đồng cho vay"),
+    ("THONG BAO CAP TIN DUNG", "Hồ sơ tín dụng", "Thông báo cấp tín dụng"),
+    ("CAM KET BAN GIAO GIAY TO XE", "Hồ sơ tín dụng", "Cam kết bàn giao giấy tờ xe"),
+    ("VAN BAN XAC NHAN DU LIEU", "Hồ sơ tín dụng", "Văn bản xác nhận dữ liệu"),
+
+    # 10. Hồ sơ bảo hiểm
+    ("HOA DON BAO HIEM", "Hồ sơ bảo hiểm", "Hóa đơn bảo hiểm"),
+
+    # 11. Hồ sơ khác
+    ("HO SO KHAC", "Hồ sơ khác", "Hồ sơ khác"),
 ]
 
 # Map Enum tới biến data
 RULES_REGISTRY = {
     ProfileType.HO_SO_PHE_DUYET: RULES_PHE_DUYET,
     ProfileType.HO_SO_GIAI_NGAN: RULES_GIAI_NGAN,
-    ProfileType.NHA_DU_AN_RULES: NHA_DU_AN_RULES,
+    ProfileType.NHA_DU_AN: RULES_NHA_DU_AN,
+    ProfileType.HOP_DONG_MUA_BAN_O_TO: RULES_HOP_DONG_MUA_BAN_O_TO,
 
 }
 
